@@ -1,0 +1,58 @@
+import java.lang.reflect.Array;
+
+public class ArrayUtils {
+
+  private ArrayUtils() {}
+
+  public static Object expand(Object a) {
+    Class cl = a.getClass();
+    if (!cl.isArray()) return null;
+    int uzunluk = Array.getLength(a); //dizi uzunlugu
+    int yeniUzunluk = length + (length / 2); // 50% daha fazla //sınacvda size+++ olarak belirtigim kısım 
+    Class componentType = a.getClass().getComponentType();
+    Object newArray = Array.newInstance(componentType, yeniuzunluk);
+    System.arraycopy(a, 0, yeniDizi, 0, uzunluk);
+    return yeniDizi;
+  }
+
+  public static void main (String arg[]) {
+    int sayi[] = new int[20];
+    int sayiGir;
+    Random rnd =new Random();
+    boolean loop = true;
+    //get sayi..
+    while(loop)
+
+    {
+        System.out.println("sayi giriniz, A bitir");
+        Integer n = in.nextInt();
+        if(n.equals('A'))
+        {
+            break;
+        }
+        else
+        { 
+            sayiGir =n;        
+
+        }
+
+
+
+    }
+    for(int i=0;i<sayi.lenght;i++){
+       if(sayiGir>sayi.lenght){
+       sayi=(int[])ArrayUtils.expand(sayi);//dizinin boyu arttırıldı
+       sayi[i]=rnd.nextInt(1);//bir tane randm sayi atandı
+       
+    }else {
+    sayi[i]=rnd.nextInt(1);//bir tane randm sayi atandı
+    }
+    
+    }
+    for(int j=sayi.lenght;j>0;j--)
+    system.out.printlen(sayi[j]);
+
+   
+  }
+
+}
